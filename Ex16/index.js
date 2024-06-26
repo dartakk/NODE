@@ -47,10 +47,10 @@ app.post('/planets/:id/image', (req, res) => {
             [planetId, imagePath],
             (error, results) => {
                 if (error) {
-                    return res.status(500).json({ message: 'Database update failed', error: error });
+                    return res.status(500).json({ message: 'Update failed', error: error });
                 }
 
-                res.status(200).json({ message: 'Image uploaded and path updated in database', path: imagePath });
+                res.status(200).json({ message: 'Image uploaded', path: imagePath });
             }
         );
     });
